@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Запись на тренировку</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href='{% static "css\registr.css" %}'>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Плавают всеми стилями но тонут одним!</a>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="home">Главная страница</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about_swimming">О плавании</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about_me">Обо мне</a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+  </header>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <div class="content">
+  <form method="post">
+    <h1>Заполните форму по регистрации на тренировку</h1>
+    {% csrf_token %}<br>
+    {{ form.name }}<br>
+    {{ form.age }}<br>
+    {{ form.phone }}<br>
+    {{ form.purpose }}<br>
+    {{ form.comment }}<br>
+    <span>{{ error }}</span>
+    <button class="btn btn-success">Записаться</button>
+  </form>
+</div>
+</html>

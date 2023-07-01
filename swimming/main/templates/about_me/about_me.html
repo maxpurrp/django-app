@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Обо мне</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link rel="stylesheet" href='{% static "css\workouts.css" %}'>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Плавают всеми стилями но тонут одним!</a>
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="home">Главная страница</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about_swimming">О плавании</a>
+             </li>
+              <li class="nav-item">
+                <a class="nav-link" href="reg_for_training">Запись на тренировку</a>
+              </li>
+          </div>
+      </nav>
+  </header>
+    <div class ="context">
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <body>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h1>Семин Максим</h1>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <p class="fs-2">Я тренер по плаванию с 2016 года, сначала работал только с детьми, со временем начал помогать и взрослым. 
+                  Эти 7 лет я беспрерывно обучаю и готовлю к соревнованиям детей а так же 
+                  помогаю реабилитироваться взрослым после травм или поддерживать здоровье.
+                  </p>
+                  <p class="fs-2">В 2019 году закончил Северо-Восточный Государственный университет по направлению физическая культура и спорт.
+                  В том же году поступил в Национальний Государственный Университет физической культуры и спорта им. Лесгафта. 
+                  Спустя 2 года закончил направление магистратуры, в частности подготовка спортсменов высшей квалификации к соревнованиям.</p> 
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="width: 10rem;">
+                <img src="{% static 'css\img\about_me_2.jpg' %}">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h2>Контакты для связи</h2>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h3>Телефон: +7 996 559 28 12</h3>
+                <h3>Почта: seminm041@gmail.com</h3>
+                <h3>Телеграм: @semmax89</h3>
+              </div>
+            </div>
+          </div>
+        </body>
+      </div>
+    </div>
+</html>

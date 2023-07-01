@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Научись плавать !</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href='{% static "css\styles.css" %}'>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Плавают всеми стилями но тонут одним!</a>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" aria-current="page" href="about_swimming">О плавании</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="reg_for_training">Запись на тренировку</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about_me">Обо мне</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+  </header>
+  <section>
+    <body>
+      {% if error %}
+        <div class="container-xxl"div style='padding-bottom: 20px; padding-top: 50px;'>
+          <div style="padding-bottom: 50px;">
+                <h2 class='text-center' h2 style="color: rgb(175, 187, 187)">Запись на тренировку прошла успешно</h2>
+          </div>
+        </div>
+      {% endif %}
+      <div class="container-xxl"div style='padding-bottom: 20px; padding-top: 50px;'>
+          <div style="padding-bottom: 50px;">
+                <h2 class='text-center' h2 style="color: rgb(64, 165, 165)">Привет. Этот сайт поможет тебе улучшить
+                  твой навык плавания и даст тебе необходимый уровень
+                  подготовки для уверенного и техничного плавания</h2>
+          </div>    
+        </div>
+      </div>
+      <h2 class='text-center' h2 style="color: rgb(100, 180, 180);">Подготовка подразумевает три этапа :</h2>
+      <div class="container-xxl" div style='padding-bottom: 158px; padding-top: 15px;'>
+          <div class="row">
+            <div class="col">
+              <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 23rem;">
+                  <img src="{% static 'css\img\Suhoe_plavanie.jpg' %}" class="card-img-top" alt="swim">
+                  <div class="card-body">
+                    <h5 class="card-title">Первый этап</h5>
+                    <p class="card-text">На этом этапе ты подготовишь свой организм на суше. Здесь представлены упражнения из “сухого плавания ”, которое имеет весомую роль в подготовке пловцов как высшего спортивногно мастерства, так и любителей, которые занимаются для поддержания здоровья</p>
+                    <a href="workout_gym" class="btn btn-primary">Приступить</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 23rem;">
+                  <img src="{% static 'css\img\swim_equipment.png' %}" class="card-img-top" alt="swim">
+                  <div class="card-body">
+                    <h5 class="card-title">Второй этап</h5>
+                    <p class="card-text">На втором этапе представлены упражнения, которые помогут тебе правильно рукодствоваться твоим телом. Эти упражнения включают в себя роботу с положением тела в воде, правильное дыхание и общие рекомендации по нахождению в бассейне.</p>
+                    <a href="workout_swimming" class="btn btn-primary">Приступить</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 23rem;">
+                  <img src="{% static 'css\img\spina.jpeg' %}" class="card-img-top" alt="swim">
+                  <div class="card-body">
+                    <h5 class="card-title">Третий этап</h5>
+                    <p class="card-text">Третий, и заключительный этап содержит в себе тренировки, которвые разбиты по уровню мастерства. Данные тренировки подразумевают, что вы уже овладели 4 основными стилями плавания. Здесь используются программы тренировок, которые помогут сдвинуться с мертвой точки вашего прогресса.</p>
+                    <a href="workout_swimming_pro" class="btn btn-primary">Приступить</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </body>  
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</html>

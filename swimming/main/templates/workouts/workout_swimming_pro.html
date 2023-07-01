@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Второй этап</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "css\styles.css" %}'>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Плавают всеми стилями но тонут одним!</a>
+          <ul class="navbar-nav">
+          <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="home">Главная страница</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about_swimming">О плавании</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reg_for_training">Запись на тренировку</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="about_me">Обо мне</a>
+          </li>
+          </ul>
+      </div>
+  </nav>
+  <section>
+    <div class="container-xxl" div style='padding-bottom: 20px; padding-top: 50px;'>
+      <center>
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <h2>В данном разделе представлены тренировки, которые в той или иной мере способствуют прогрессу вашего навыка плавания. Первая программа вводная, она не тяжелая, но есть над чем поработать. Все последующие программы тяжелее, прежде чем к ним приступить - отдохните и подготовьтесь к нагрузке.</h2>
+          <h3>Программы также имеют различные понятия, которые не совсем будут понятны для новичков. Коротко о них:</h3>
+          <ul type="disc">
+            <li>Режим( секунды или минуты) это то время, за которое вам следует выполнить нагрузку включая в себя отдых. Разберем условие : режим 1 минута и  задание 6х50м. Представим, что вы плывете 50м за 45 секунд. Значит ваш отдых будет составлять 15 секунд. Проплывете за 30 секунд - отдых будет тоже 30 секунд. </li>
+          </ul>
+          <ul type="disc">
+            <li>Прогрессия результата. В заданиях с такой формулировкой всегда обозначается стартовое время(за которое вам предстоит проплывать первое повторение) и шаг, то есть, насколько в секундах вам нужно улучшать время проплывания дистанции</li>
+          </ul>
+          <ul type="disc">
+            <li>Пульс. В данном блоке не рассматривается способ измерения пульса(предполагается, что вы с ними знакомы). Данный показатель засекается за 10 секунд и должен быть от 18 до 30 ударов </li>
+          </ul>
+        </div>
+      </center>
+    </div>
+    <div class="container-xxl" div style='padding-bottom: 15px; padding-top: 15px;'>
+      <center>
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <h3>Ниже представлены программы тренировок, следуя которым вы сможете улучшить выбранную вами направленность тренировки</h3>
+        </div>
+      </center>
+    </div>
+    <div class="container-xxl" div style='padding-bottom: 50px;'>
+      <div id="CarouselWithControls" class="carousel carousel-dark slide" data-bs-ride="false">
+        <div class="carousel-inner">
+        {% if info %}
+            {% for item in info %} 
+                {% if forloop.first %}
+                  <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                      <img src="{% static 'css\img\fon.jpg' %}" class="rounded mx-auto d-block w-50">
+                      <h2 style='color: rgb(100, 180, 180)' class="text-center">{{ item.title }}</h2>
+                      <h3 style='color: rgb(100, 180, 180)' class="text-center">{{ item.description }}</h3>
+                      {% for sent in item.full_text %}
+                        <h4 style='color: rgb(100, 180, 180)' class="text-center">{{ sent }}</h4>
+                      {% endfor %}
+                  </div>
+                {% else %}
+                  <div class="carousel-item {% if  forloop.first %} active {% endif %}">
+                      <img src="{% static 'css\img\fon.jpg' %}" class="rounded mx-auto d-block w-50">
+                      <h2 style='color: rgb(100, 180, 180)' class="text-center">{{ item.title }}</h2>
+                      <h3 style='color: rgb(100, 180, 180)' class="text-center">{{ item.description }}</h3>
+                      {% for sent in item.full_text %}
+                        <h4 style='color: rgb(100, 180, 180)' class="text-center">{{ sent }}</h4>
+                      {% endfor %}
+                  </div>
+                {% endif %}
+            <button class="carousel-control-prev" href="#CarouselWithControls" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+            </button>
+            <button class="carousel-control-next" href="#CarouselWithControls" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+            </button>
+            {% endfor %}
+        {% else %}
+        <div class="container-xxl" div style='padding-bottom: 20px; padding-top: 50px;'>
+          <div class="shadow-lg p-3 mb-5 bg-white rounded">
+            <center>
+              <h2>Тренировки еще не добавлены</h2>
+            </center>
+          </div>
+        </div>  
+        {% endif %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      </div>
+    </div>
+  </section>
+</html>
