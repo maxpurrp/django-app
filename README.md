@@ -1,5 +1,5 @@
 # How to install
-1.Install venv for your OS
+1. Install venv for your OS
 Linux / MacOS
  ```sudo apt install -y python3-venv```
  Windows
