@@ -60,7 +60,7 @@
             {% for item in info %} 
                 {% if forloop.first %}
                   <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                      <img src="{% static 'css\img\suh.jpg' %}" class="rounded mx-auto d-block w-50">
+                      <img src="{{ item.image }}" class="rounded mx-auto d-block w-50">
                       <h2 style='color: rgb(100, 180, 180)' class="text-center">{{ item.title }}</h2>
                       <h3 style='color: rgb(100, 180, 180)' class="text-center">{{ item.description }}</h3>
                       {% for sent in item.full_text %}
@@ -69,13 +69,13 @@
                   </div>
                 {% else %}
                   <div class="carousel-item {% if  forloop.first %} active {% endif %}">
-                      <img src="{% static 'css\img\suh.jpg' %}" class="rounded mx-auto d-block w-50">
+                      <img src="{{ item.image }}" class="rounded mx-auto d-block w-50">
                       <h2 style='color: rgb(100, 180, 180)' class="text-center">{{ item.title }}</h2>
                       <h3 style='color: rgb(100, 180, 180)' class="text-center">{{ item.description }}</h3>
                       {% for sent in item.full_text %}
-                        <h4 style='color: rgb(100, 180, 180)' class="text-center">{{ sent }}</h4>
-                      {% endfor %}
-                  </div>
+                      <h4 style='color: rgb(100, 180, 180)' class="text-center">{{ sent }}</h4>
+                      {% endfor %}                  
+                    </div>
                 {% endif %}
             <button class="carousel-control-prev" href="#CarouselWithControls" role="button" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -13,11 +13,11 @@ class RegistrationsForm(ModelForm):
 
             'age' : NumberInput(attrs={'min': '18', 'max': '65', 
                                        'class' : 'form-control',
-                                       'placeholder' : 'Ваше возраст'}),
+                                       'placeholder' : 'Ваш возраст'}),
 
             'phone' : TextInput(attrs={
                 'class' : 'form-control',
-                'placeholder' : 'Номер в формате +89965592812'}),
+                'placeholder' : 'Номер в формате 89965592812'}),
 
             'purpose' : TextInput(attrs={
                 'class' : 'form-control',

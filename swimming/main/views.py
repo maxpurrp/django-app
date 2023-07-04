@@ -30,8 +30,7 @@ def registration(request):
         form = RegistrationsForm(request.POST)
         if form.is_valid():
             form.save()
-            error = 'ffff'
-            return render(request,'main/base.html', {'error' : error})
+            return render(request,'registration/success.html')
         else:
             error = 'Форма заполнена неверно'
 
@@ -49,7 +48,7 @@ def workout_gym(request):
         sent = str(elem).split("'full_text': '")[1]
         res = sent.split('\\r\\n')
         text.append(res)
-        
+
     return render(request, 'workouts/workout_gym.html', {'info' : parse(text, info)})
 
 def workout_swimming(request):
