@@ -33,7 +33,7 @@ class Workouts_swimming_pro(models.Model):
 
 
 class Registrations(models.Model):
-    phone_regex = RegexValidator(regex=r'^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$', message='Phone number must me entered in format : "89965592812')
+    phone_regex = RegexValidator(regex=r'^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$', message='Номер должен быть введен в формате 89965592812')
     name = models.CharField('Ваше имя',max_length=30)
     age = models.IntegerField('Ваш возраст')
     purpose = models.CharField('Желаемый результат от занятий', max_length=250)
