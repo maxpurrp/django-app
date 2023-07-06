@@ -11,7 +11,6 @@ class Workouts_gym(models.Model):
     def __str__(self) -> str:
         return self.title
     
-
 class Workouts_swimming(models.Model):
     title = models.CharField('Название тренировки', max_length=50)
     description = models.CharField('Описание тренировки', max_length=250)
@@ -38,8 +37,8 @@ class Registrations(models.Model):
     name = models.CharField('Ваше имя',max_length=30)
     age = models.IntegerField('Ваш возраст')
     purpose = models.CharField('Желаемый результат от занятий', max_length=250)
-    phone = models.CharField(validators=[phone_regex], max_length=17, blank= True)
-    comment = models.CharField('Комментарий', max_length=250)
+    phone = models.CharField(validators=[phone_regex], max_length=17)
+    comment = models.CharField('Комментарий', max_length=50, blank = True)
 
     def __str__(self) -> str:
         return self.name

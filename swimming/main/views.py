@@ -25,14 +25,15 @@ def about_me(request):
     return render(request, 'about_me/about_me.html')
 
 def registration(request):
-    error = ''
+    error = {}
     if request.method == 'POST':
         form = RegistrationsForm(request.POST)
         if form.is_valid():
             form.save()
             return render(request,'registration/success.html')
         else:
-            error = 'Форма заполнена неверно'
+            for field in form.errors:
+               error[field]=form.errors[field].as_text()
 
     form = RegistrationsForm()
     data = {

@@ -37,11 +37,14 @@
             <h1>Заполните форму по регистрации на тренировку</h1>
             {% csrf_token %}<br>
             {{ form.name }}<br>
+            {{ error.name }}
             {{ form.age }}<br>
             {{ form.phone }}<br>
+            {{ error.phone }}
             {{ form.purpose }}<br>
+            {{ error.purpose }}
             {{ form.comment }}<br>
-            <span>{{ error }}</span>
+            {{ error.comment }}
             <button class="btn btn-success">Записаться</button>
           </form>
         </div>
